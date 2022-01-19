@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "poetry-ghactions"
+version = "0.1.0"
+description = "Toy project to explore github actions for poetry projects"
+authors = ["Felipe Aguirre Martinez <felipeam86@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+attrs = "^21.4.0"
+click = "^8.0.3"
+requests = "^2.27.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+black = "^21.12b0"
+isort = "^5.10.1"
+pytest-cov = "^3.0.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
