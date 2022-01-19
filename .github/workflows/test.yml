@@ -28,11 +28,18 @@ jobs:
       run: |
         python --version
         python -m pip install --upgrade pip
-        python -m pip install --upgrade poetry
+        python -m pip install --upgrade poetry coveralls
         poetry install
     - name: Test with pytest
       run: |
         poetry run pytest --cov-report term-missing --cov=poetry_ghactions tests/
+    - name: Publish coverage to Coveralls
+      env:
+        COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+      if: ${{ env.COVERALLS_REPO_TOKEN }}
+      run: |
+        coverage xml
+        coveralls
     - name: Lint with black
       run: |
         poetry run black --diff --check .
