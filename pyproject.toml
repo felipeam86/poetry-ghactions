@@ -11,7 +11,7 @@ click = "^8.0.3"
 requests = "^2.27.1"
 
 [tool.poetry.dev-dependencies]
-pytest = "^5.2"
+pytest = "^6.2.5"
 black = "^21.12b0"
 isort = "^5.10.1"
 pytest-cov = "^3.0.0"
